@@ -1,0 +1,48 @@
+/* ============================================
+   FENRIR ASHENVEIL — FRONTIER ARCHIVE
+   CSS Custom Properties
+   ============================================ */
+
+:root {
+  /* Colors — Earthy, warm dark palette */
+  --color-bg-primary: #0f0e0c;
+  --color-bg-secondary: #1a1814;
+  --color-bg-tertiary: #24221c;
+  --color-bg-panel: #1e1c17;
+
+  --color-olive: #3a3d2e;
+  --color-olive-light: #4a4d3a;
+  --color-brown: #5c4a3a;
+  --color-brown-light: #6b5a4a;
+  --color-amber: #c9a959;
+  --color-amber-dim: #9a7d3e;
+  --color-rust: #b85c38;
+  --color-rust-dim: #8a4528;
+
+  --color-text-primary: #e8e0d0;
+  --color-text-secondary: #b5ad9f;
+  --color-text-muted: #7a7568;
+  --color-text-dim: #5a5548;
+
+  --color-border: #2a2820;
+  --color-border-light: #3a382e;
+
+  /* Typography */
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Space Grotesk', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.5rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+
+  /* Transitions */
+  --transition-fast: 150ms ease-out;
+  --transition-medium: 300ms ease-out;
+  --transition-slow: 500ms ease-out;
+}

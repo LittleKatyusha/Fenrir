@@ -1,0 +1,332 @@
+/* ============================================
+   FENRIR ASHENVEIL — FRONTIER ARCHIVE
+   Responsive Styles & Media Queries
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .profile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .vessel-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sectors-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .content {
+    padding: var(--space-2xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100vh;
+    transform: translateX(-100%);
+    transition: transform var(--transition-medium);
+    z-index: 150;
+    border-right: 1px solid var(--color-border);
+    border-bottom: none;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(15, 14, 12, 0.8);
+    z-index: 140;
+    backdrop-filter: blur(4px);
+  }
+
+  .sidebar-overlay.active {
+    display: block;
+  }
+
+  .content {
+    margin-left: 0;
+    padding: var(--space-xl) var(--space-md);
+    padding-top: calc(var(--space-xl) + 60px);
+  }
+
+  .main-interface {
+    flex-direction: column;
+  }
+
+  .section-title {
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+  }
+
+  .section-header {
+    margin-bottom: var(--space-xl);
+  }
+
+  .section-meta {
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .data-panel {
+    padding: var(--space-lg);
+  }
+
+  .timeline {
+    padding-left: var(--space-lg);
+  }
+
+  .timeline-marker {
+    left: calc(-1 * var(--space-lg));
+    transform: translateX(-3px);
+  }
+
+  .log-entry {
+    padding: var(--space-lg);
+  }
+
+  .sector-card {
+    padding: var(--space-lg);
+  }
+
+  .boot-content {
+    padding: var(--space-lg);
+    max-width: 100%;
+  }
+
+  .boot-log {
+    min-height: 150px;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .personality-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .personality-card {
+    padding: var(--space-lg);
+  }
+
+  .personality-card.wide {
+    grid-column: span 1;
+  }
+
+  .trait-header {
+    gap: var(--space-sm);
+    margin-bottom: var(--space-sm);
+  }
+
+  .trait-icon {
+    font-size: 1rem;
+  }
+
+  .trait-name {
+    font-size: 1.1rem;
+  }
+
+  .trait-desc {
+    font-size: 0.8rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .trait-meter {
+    height: 2px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    padding: var(--space-lg) var(--space-sm);
+    padding-top: calc(var(--space-lg) + 60px);
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.8rem;
+  }
+
+  .panel-title {
+    font-size: 1.1rem;
+  }
+
+  .timeline-title {
+    font-size: 1.2rem;
+  }
+
+  .sector-name {
+    font-size: 1.1rem;
+  }
+
+  .data-value {
+    font-size: 0.8rem;
+  }
+
+  .nav-link {
+    font-size: 0.8rem;
+    padding: var(--space-sm);
+  }
+
+  .sidebar-header {
+    padding: var(--space-lg);
+  }
+
+  .nav-section {
+    padding: var(--space-md) var(--space-lg);
+  }
+
+  .sidebar-footer {
+    padding: var(--space-md) var(--space-lg);
+  }
+
+  .personality-card {
+    padding: var(--space-md);
+  }
+
+  .trait-name {
+    font-size: 1rem;
+  }
+
+  .trait-desc {
+  	font-size: 0.75rem;
+  }
+  
+  /* Abilities Section — Tablet */
+  .ability-body {
+  	grid-template-columns: 1fr;
+  }
+  
+  .ability-features {
+  	grid-template-columns: 1fr 1fr;
+  }
+  
+  .ability-header {
+  	flex-wrap: wrap;
+  }
+  
+  .ability-status-badge {
+  	margin-top: var(--space-xs);
+  }
+  }
+  
+  @media (max-width: 480px) {
+  .ability-card {
+  	padding: var(--space-lg);
+  }
+  
+  .ability-name {
+  	font-size: 1.4rem;
+  }
+  
+  .ability-body {
+  	grid-template-columns: 1fr;
+  }
+  
+  .ability-features {
+  	grid-template-columns: 1fr;
+  }
+  
+  .ability-feature {
+  	padding: var(--space-md);
+  }
+  
+  .ability-header {
+  	gap: var(--space-md);
+  }
+  
+  .ability-icon-wrap {
+  	width: 40px;
+  	height: 40px;
+  }
+  
+  .spec-row {
+  	flex-direction: column;
+  	gap: 2px;
+  }
+  
+  .spec-value {
+  	text-align: left;
+  }
+  
+  .ability-range-visual {
+  	padding: var(--space-md);
+  }
+  
+  .range-bar-container {
+  	height: 22px;
+  }
+  
+  .ability-cycle-visual {
+  	padding: var(--space-md);
+  }
+  
+  .phase-bar {
+  	height: 24px;
+  }
+  
+  .cycle-timeline {
+  	flex-direction: column;
+  	gap: var(--space-sm);
+  }
+  
+  .cycle-phase {
+  	flex-direction: row;
+  	align-items: center;
+  	gap: var(--space-sm);
+  }
+  
+  .phase-bar {
+  	flex: 1;
+  	height: 20px;
+  }
+  
+  .phase-info {
+  	flex-direction: column;
+  	gap: 0;
+  	min-width: 70px;
+  }
+  
+  .ability-charge-visual {
+  	padding: var(--space-md);
+  }
+  
+  .charge-stack-container {
+  	flex-direction: column;
+  	align-items: stretch;
+  	gap: var(--space-md);
+  }
+  
+  .charge-discharge-indicator {
+  	flex-direction: row;
+  	justify-content: space-between;
+  	min-width: auto;
+  }
+  
+  .discharge-multiplier {
+  	font-size: 1.2rem;
+  }
+  
+  .charge-segment {
+  	height: 28px;
+  }
+  
+  .charge-cycle-info {
+  	flex-direction: column;
+  }
+  }

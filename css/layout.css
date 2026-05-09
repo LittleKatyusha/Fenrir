@@ -1,0 +1,430 @@
+/* ============================================
+   FENRIR ASHENVEIL — FRONTIER ARCHIVE
+   Main Interface, Sidebar, Content Area, Sections
+   ============================================ */
+
+/* ============================================
+   MAIN INTERFACE
+   ============================================ */
+.main-interface {
+  display: flex;
+  min-height: 100vh;
+  opacity: 1;
+  transition: opacity var(--transition-slow);
+}
+
+.main-interface.hidden {
+  opacity: 0;
+}
+
+/* ============================================
+   SIDEBAR
+   ============================================ */
+.sidebar {
+  width: 280px;
+  background-color: var(--color-bg-secondary);
+  border-right: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  height: 100vh;
+  overflow-y: auto;
+  z-index: 100;
+}
+
+.sidebar-header {
+  padding: var(--space-xl);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.archive-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-sm);
+}
+
+.archive-logo svg {
+  width: 40px;
+  height: 40px;
+  color: var(--color-amber);
+  flex-shrink: 0;
+}
+
+.archive-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  line-height: 1.4;
+  color: var(--color-text-secondary);
+}
+
+.archive-id {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: var(--color-text-dim);
+  margin-top: var(--space-sm);
+}
+
+/* Navigation */
+.nav-section {
+  padding: var(--space-lg) var(--space-xl);
+}
+
+.nav-section-title {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: var(--color-text-dim);
+  margin-bottom: var(--space-sm);
+}
+
+.nav-list {
+  list-style: none;
+}
+
+.nav-list li {
+  margin-bottom: 2px;
+}
+
+.nav-link {
+  display: block;
+  padding: var(--space-sm) var(--space-md);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all var(--transition-fast);
+  position: relative;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 0;
+  background-color: var(--color-amber);
+  border-radius: 2px;
+  transition: height var(--transition-fast);
+}
+
+.nav-link:hover {
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-tertiary);
+}
+
+.nav-link:hover::before {
+  height: 60%;
+}
+
+.nav-link.active {
+  color: var(--color-amber);
+  background-color: var(--color-bg-tertiary);
+}
+
+.nav-link.active::before {
+  height: 80%;
+}
+
+/* Sidebar Footer */
+.sidebar-footer {
+  margin-top: auto;
+  padding: var(--space-lg) var(--space-xl);
+  border-top: 1px solid var(--color-border);
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-amber);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.status-text {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: var(--color-amber);
+}
+
+.coordinates {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--color-text-dim);
+}
+
+/* ============================================
+   CONTENT AREA
+   ============================================ */
+.content {
+  margin-left: 280px;
+  flex: 1;
+  padding: var(--space-2xl) var(--space-3xl);
+  max-width: none;
+}
+
+/* ============================================
+   SECTIONS
+   ============================================ */
+.section {
+  display: none;
+  animation: fadeInSection 0.5s ease-out;
+}
+
+.section.active {
+  display: block;
+}
+
+@keyframes fadeInSection {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section-header {
+  margin-bottom: var(--space-2xl);
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--color-border);
+  max-width: 1400px;
+}
+
+.section-meta {
+  display: flex;
+  gap: var(--space-md);
+  margin-bottom: var(--space-sm);
+}
+
+.meta-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  color: var(--color-text-dim);
+}
+
+.meta-value {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: var(--color-rust);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--color-text-primary);
+  letter-spacing: -0.02em;
+}
+
+.section-title em {
+  font-style: italic;
+  color: var(--color-amber);
+  font-weight: 400;
+}
+
+.section-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  margin-top: var(--space-sm);
+  letter-spacing: 0.05em;
+}
+
+/* ============================================
+   PROFILE SECTION
+   ============================================ */
+.profile-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: var(--space-2xl);
+  max-width: 1400px;
+}
+
+.profile-visual {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.visual-frame {
+  position: relative;
+  border: 1px solid var(--color-border);
+  padding: var(--space-sm);
+}
+
+.visual-frame::before,
+.visual-frame::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--color-amber);
+}
+
+.visual-frame::before {
+  top: -1px;
+  left: -1px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.visual-frame::after {
+  bottom: -1px;
+  right: -1px;
+  border-left: none;
+  border-top: none;
+}
+
+.visual-placeholder {
+  aspect-ratio: 3/4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.character-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.visual-icon {
+  width: 80px;
+  height: 80px;
+  color: var(--color-text-dim);
+}
+
+.visual-caption {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: var(--color-text-dim);
+}
+
+.visual-meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.meta-key {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: var(--color-text-dim);
+}
+
+.status-wanted {
+  color: var(--color-rust) !important;
+  font-weight: 700;
+}
+
+.profile-data {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+/* ============================================
+   VESSEL SECTION
+   ============================================ */
+.vessel-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2xl);
+  max-width: 1400px;
+}
+
+.vessel-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.schematic-frame {
+  width: 100%;
+  aspect-ratio: 16/10;
+  border: 1px solid var(--color-border);
+  padding: var(--space-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.schematic-frame::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  border: 1px dashed var(--color-border-light);
+  pointer-events: none;
+}
+
+.schematic-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  color: var(--color-text-dim);
+}
+
+.schematic-placeholder svg {
+  width: 160px;
+  height: auto;
+}
+
+.schematic-label {
+	font-family: var(--font-mono);
+	font-size: 0.7rem;
+	letter-spacing: 0.1em;
+}
+
+/* ============================================
+ABILITIES SECTION
+============================================ */
+.abilities-grid {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-xl);
+	max-width: 1400px;
+}

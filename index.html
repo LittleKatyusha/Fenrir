@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FENRIR ASHENVEIL — Frontier Archive</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <!-- Boot Sequence Overlay -->
+    <div id="boot-overlay" class="boot-overlay">
+        <div class="boot-content">
+            <div class="boot-header">
+                <span class="boot-label">SYSTEM</span>
+                <span class="boot-status">INITIALIZING</span>
+            </div>
+            <div class="boot-log" id="boot-log"></div>
+            <div class="boot-progress">
+                <div class="boot-progress-bar" id="boot-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Grain Overlay -->
+    <div class="grain-overlay"></div>
+
+    <!-- Main Interface -->
+    <div id="main-interface" class="main-interface hidden">
+        <!-- Sidebar Navigation -->
+        <div class="sidebar-overlay" id="sidebar-overlay"></div>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="archive-logo">
+                    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.5"/>
+                        <circle cx="20" cy="20" r="8" stroke="currentColor" stroke-width="1"/>
+                        <line x1="20" y1="2" x2="20" y2="12" stroke="currentColor" stroke-width="1"/>
+                        <line x1="20" y1="28" x2="20" y2="38" stroke="currentColor" stroke-width="1"/>
+                        <line x1="2" y1="20" x2="12" y2="20" stroke="currentColor" stroke-width="1"/>
+                        <line x1="28" y1="20" x2="38" y2="20" stroke="currentColor" stroke-width="1"/>
+                    </svg>
+                    <span class="archive-label">FRONTIER<br>ARCHIVE</span>
+                </div>
+                <div class="archive-id">REF-7749-FA</div>
+            </div>
+
+            <div class="nav-section">
+                <div class="nav-section-title">DOSSIER</div>
+                <ul class="nav-list">
+                    <li><a href="#profile" class="nav-link active" data-section="profile">Subject Profile</a></li>
+                    <li><a href="#personality" class="nav-link" data-section="personality">Personality</a></li>
+                    <li><a href="#history" class="nav-link" data-section="history">Service History</a></li>
+                    <li><a href="#backstory" class="nav-link" data-section="backstory">Backstory</a></li>
+                    <li><a href="#abilities" class="nav-link" data-section="abilities">Abilities</a></li>
+                    <li><a href="#vessel" class="nav-link" data-section="vessel">Vessel Data</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-section">
+                <div class="nav-section-title">NAVIGATION</div>
+                <ul class="nav-list">
+                    <li><a href="#sectors" class="nav-link" data-section="sectors">Charted Sectors</a></li>
+                    <li><a href="#logs" class="nav-link" data-section="logs">Archive Logs</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-footer">
+                <div class="status-indicator">
+                    <span class="status-dot"></span>
+                    <span class="status-text">ONLINE</span>
+                </div>
+                <div class="coordinates">
+                    <span>SECTOR 7G</span>
+                    <span>44.22.19.7</span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Content Area -->
+        <main class="content">
+            <!-- Profile Section -->
+            <section id="profile" class="section active">
+                <div class="section-header">
+                    <div class="section-meta">
+                        <span class="meta-label">DOSSIER FILE</span>
+                        <span class="meta-value">CLASSIFIED — LEVEL 3</span>
+                    </div>
+                    <h1 class="section-title">FENRIR <em>ASHENVEIL</em></h1>
+                    <p class="section-subtitle">Former Terran Expeditionary Corps — Discharged</p>
+                    <div class="decorative-line"></div>
+                </div>
+
+                <div class="profile-grid">
+                    <div class="profile-visual">
+                        <div class="visual-frame">
+                            <div class="visual-placeholder">
+                                <img src="9f8b3472035e974c76e3d9bb16c624a7.jpg" alt="Fenrir Ashenveil" class="character-image">
+                            </div>
+                            <div class="frame-decoration"></div>
+                        </div>
+                        <div class="visual-meta">
+                            <div class="meta-row">
+                                <span class="meta-key">STATUS</span>
+                                <span class="meta-value status-wanted">AT LARGE</span>
+                            </div>
+                            <div class="meta-row">
+                                <span class="meta-key">LAST SEEN</span>
+                                <span class="meta-value">Sector 7G — Rimward</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="profile-data">
+                        <div class="data-panel">
+                            <h3 class="panel-title">Biographical Data</h3>
+                            <div class="data-table">
+                                <div class="data-row">
+                                    <span class="data-key">Designation</span>
+                                    <span class="data-value">Fenrir Ashenveil</span>
+                                </div>
+                                <div class="data-row">
+                                    <span class="data-key">Species</span>
+                                    <span class="data-value">Human (Terran)</span>
+                                </div>
+                                <div class="data-row">
+                                    <span class="data-key">Origin</span>
+                                    <span class="data-value">Outer Colonies — Unspecified</span>
+                                </div>
+                                <div class="data-row">
+                                    <span class="data-key">Occupation</span>
+                                    <span class="data-value">Independent Operative</span>
+                                </div>
+                                <div class="data-row">
+                                    <span class="data-key">Affiliation</span>
+                                    <span class="data-value">None (Former TEC)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="data-panel">
+                            <h3 class="panel-title">Combat Statistics</h3>
+                            <div class="stats-grid">
+                                <div class="stat-item">
+                                    <div class="stat-header">
+                                        <span class="stat-name">POWER</span>
+                                        <span class="stat-value">8</span>
+                                    </div>
+                                    <div class="stat-bar">
+                                        <div class="stat-fill" style="width: 40%"></div>
+                                    </div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-header">
+                                        <span class="stat-name">MENTAL</span>
+                                        <span class="stat-value">12</span>
+                                    </div>
+                                    <div class="stat-bar">
+                                        <div class="stat-fill" style="width: 60%"></div>
+                                    </div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-header">
+                                        <span class="stat-name">AGILITY</span>
+                                        <span class="stat-value">18</span>
+                                    </div>
+                                    <div class="stat-bar">
+                                        <div class="stat-fill" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-header">
+                                        <span class="stat-name">INTELLIGENCE</span>
+                                        <span class="stat-value">12</span>
+                                    </div>
+                                    <div class="stat-bar">
+                                        <div class="stat-fill" style="width: 60%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="data-panel">
+                            <h3 class="panel-title">Psychological Profile</h3>
+                            <p class="panel-text">
+                                Subject exhibits severe disillusionment with Terran expansionist doctrine.
+                                Psychological evaluation indicates high moral rigidity and low tolerance for
+                                institutional authority. Subject abandoned post during Operation Glass Spear
+                                following disagreement with command directives.
+                            </p>
+                            <p class="panel-text">
+                                Currently operates as independent wanderer. Motivation appears to be
+                                avoidance of Terran-controlled space rather than active opposition.
+                                Threat level: MODERATE.
+                            </p>
+                        </div>
+
+                        <div class="data-panel">
+                            <h3 class="panel-title">Behavioral Notes</h3>
+                            <p class="panel-text">
+                                Despite the grim circumstances of his discharge, subject displays remarkably
+                                high energy and an almost defiant optimism. Multiple witness accounts describe
+                                a young man who carries himself with easy confidence — quick to smile, quicker
+                                to laugh. His flamboyant mannerisms and sharp wit have made him a memorable
+                                figure at every port of call.
+                            </p>
+                            <p class="panel-text">
+                                Do not mistake his levity for carelessness. When stakes are high, the mask
+                                drops. Survivors of the Kharon-IV evacuation cite his protective instincts
+                                and tactical competence as decisive factors. He is dangerous precisely because
+                                he makes it look effortless.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Personality Section -->
+            <section id="personality" class="section">
+                <div class="section-header">
+                    <div class="section-meta">
+                        <span class="meta-label">BEHAVIORAL ANALYSIS</span>
+                        <span class="meta-value">FIELD OBSERVATIONS</span>
+                    </div>
+                    <h1 class="section-title">SUBJECT <em>PERSONALITY</em></h1>
+                    <div class="decorative-line"></div>
+                </div>
+
+                <div class="personality-grid">
+                    <div class="personality-card primary">
+                        <div class="trait-header">
+                            <span class="trait-icon">✦</span>
+                            <h3 class="trait-name">Confident</h3>
+                        </div>
+                        <p class="trait-desc">
+                            Carries himself with an easy, almost theatrical self-assurance.
+                            Never backs down from a challenge — often the first to volunteer
+                            for the impossible.
+                        </p>
+                        <div class="trait-meter">
+                            <div class="trait-bar" style="width: 92%"></div>
+                        </div>
+                    </div>
+
+                    <div class="personality-card">
+                        <div class="trait-header">
+                            <span class="trait-icon">☀</span>
+                            <h3 class="trait-name">Easygoing</h3>
+                        </div>
+                        <p class="trait-desc">
+                            Adapts quickly to new environments. Known for finding humor in
+                            dire situations — a trait that endears him to allies and
+                            frustrates superiors.
+                        </p>
+                        <div class="trait-meter">
+                            <div class="trait-bar" style="width: 85%"></div>
+                        </div>
+                    </div>
+
+                    <div class="personality-card">
+                        <div class="trait-header">
+                            <span class="trait-icon">♦</span>
+                            <h3 class="trait-name">Flamboyant</h3>
+                        </div>
+                        <p class="trait-desc">
+                            Deliberately conspicuous. Custom-modified gear, dramatic entrances,
+                            and a tendency to grandstand — even when stealth would be wiser.
+                        </p>
+                        <div class="trait-meter">
+                            <div class="trait-bar" style="width: 78%"></div>
+                        </div>
+                    </div>
+
+                    <div class="personality-card">
+                        <div class="trait-header">
+                            <span class="trait-icon">⚔</span>
+                            <h3 class="trait-name">Brave</h3>
+                        </div>
+                        <p class="trait-desc">
+                            Fearless to the point of recklessness. Has been observed charging
+                            into active fire zones to extract wounded civilians without
+                            awaiting backup.
+                        </p>
+                        <div class="trait-meter">
+                            <div class="trait-bar" style="width: 95%"></div>
+                        </div>
+                    </div>
+
+                    <div class="personality-card">
+                        <div class="trait-header">
+                            <span class="trait-icon">🛡</span>
+                            <h3 class="trait-name">Protective</h3>
+                        </div>
+                        <p class="trait-desc">
+                            Fiercely defensive of those he considers under his care. Once
+                            committed, he will not abandon them — even at great personal cost.
+                        </p>
+                        <div class="trait-meter">
+                            <div class="trait-bar" style="width: 88%"></div>
+                        </div>
+                    </div>
+
+                    <div class="personality-card">
+                        <div class="trait-header">
+                            <span class="trait-icon">⚔</span>
+                            <h3 class="trait-name">Competent</h3>
+                        </div>
+                        <p class="trait-desc">
+                            Despite his casual demeanor, his operational record is impeccable.
+                            Technical skills, combat proficiency, and piloting all rated
+                            above standard.
+                        </p>
+                        <div class="trait-meter">
+                            <div class="trait-bar" style="width: 90%"></div>
+                        </div>
+                    </div>
+
+                    <div class="personality-card wide">
+                        <div class="trait-header">
+                            <span class="trait-icon">★</span>
+                            <h3 class="trait-name">The Duality</h3>
+                        </div>
+                        <p class="trait-desc">
+                            The most striking feature of subject's personality is the sharp
+                            contrast between his relaxed, humorous day-to-day self and the
+                            focused, lethal operative that emerges under pressure. Witnesses
+                            describe the shift as "like watching someone flip a switch."
+                            This duality makes him unpredictable — and uniquely effective.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- History Section -->
+            <section id="history" class="section">
+                <div class="section-header">
+                    <div class="section-meta">
+                        <span class="meta-label">SERVICE RECORD</span>
+                        <span class="meta-value">TERRAN EXPEDITIONARY CORPS</span>
+                    </div>
+                    <h1 class="section-title">SERVICE <em>HISTORY</em></h1>
+                    <div class="decorative-line"></div>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">YEAR 3xxx</div>
+                            <h3 class="timeline-title">Enlistment</h3>
+                            <p class="timeline-text">
+                                Enlisted with Terran Expeditionary Corps. Assigned to 7th Frontier Battalion. 
+                                Early records indicate exceptional tactical aptitude and high survival rates 
+                                in hostile environments.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">YEAR 3xxx — 3xxx</div>
+                            <h3 class="timeline-title">Frontier Campaigns</h3>
+                            <p class="timeline-text">
+                                Participated in multiple expansion campaigns along the Rimward frontier. 
+                                Decorated for valor during the Siege of Kharon-IV. Witnessed firsthand 
+                                the displacement of indigenous populations.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item critical">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">YEAR 3xxx</div>
+                            <h3 class="timeline-title">Operation Glass Spear</h3>
+                            <p class="timeline-text">
+                                Deployed to pacification operation on colony world. Refused direct order 
+                                to engage civilian targets. Abandoned unit and equipment. Officially 
+                                listed as AWOL. All Terran assets frozen.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">YEAR 3xxx — PRESENT</div>
+                            <h3 class="timeline-title">The Long Drift</h3>
+                            <p class="timeline-text">
+                                Subject acquired independent vessel and disappeared into uncharted sectors. 
+                                Occasional sightings reported by frontier traders and remote outposts. 
+                                Subject appears to provide aid to displaced colonies.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Backstory Section -->
+            <section id="backstory" class="section">
+            <div class="section-header">
+            <div class="section-meta">
+            <span class="meta-label">CLASSIFIED INTELLIGENCE</span>
+            <span class="meta-value">SUBJECT ORIGIN — DEEP PROFILE</span>
+            </div>
+            <h1 class="section-title">SUBJECT <em>BACKSTORY</em></h1>
+            <div class="decorative-line"></div>
+            </div>
+            
+            <div class="backstory-content">
+            <div class="data-panel">
+            <h3 class="panel-title">From Soldier to Deserter</h3>
+            <p class="panel-text">
+            Fenrir Ashenveil was not always a drifter at the edge of known space. He was once a proud soldier of the Terran Expeditionary Corps — a young man from the Outer Colonies who enlisted with fire in his blood and conviction in his heart. He believed, truly and deeply, that humanity's reach into the stars was a noble endeavor: a march of civilization, a beacon of progress carried into the dark. The Corps gave him purpose, and he gave them everything in return — his youth, his loyalty, his unflinching courage on the front lines of a dozen frontier campaigns. He was decorated, respected, and rising. The Terran flag on his shoulder meant something to him. It meant protection. It meant order. It meant the promise that humanity would be better than the void it sought to conquer.
+            </p>
+            </div>
+            
+            <div class="data-panel">
+            <h3 class="panel-title">The Weight of the Flag</h3>
+            <p class="panel-text">
+            But the further the Corps pushed, the more the mask of righteousness slipped. Colony after colony fell not to alien threats, but to Terran ambition — entire settlements razed under the banner of "pacification," indigenous populations displaced or erased with clinical efficiency, all while command officers signed off on atrocity reports with the phrase "for the good of humanity." Fenrir saw it firsthand: villages burned to make way for mining operations, children separated from families deemed "non-compliant," resources stripped from worlds that were never Terran to claim. The worst of it was the silence — the way his fellow soldiers swallowed their doubt, the way the news feeds called liberation what was clearly conquest, the way the words "demi manusia" — for humanity — were wielded like a holy writ to sanctify every act of cruelty. It was not a shield. It was a license. And Fenrir realized, with a sickness that settled into his bones and never left, that the very institution he had sworn to serve was the thing making the void darker.
+            </p>
+            </div>
+            
+            <div class="data-panel">
+            <h3 class="panel-title">Into the Dark</h3>
+            <p class="panel-text">
+            The breaking point came during Operation Glass Spear — a "pacification" order that was, by any honest measure, a massacre. Fenrir refused. He walked away from his unit, his rank, his identity, and everything the Corps had built around him. They froze his assets, stripped his records, and branded him a deserter. He did not care. He took a battered courier vessel — the one he would later name Ashen Drifter — and pointed it toward the Rimward frontier, away from the Core, away from the flag, away from the lie. He has been drifting ever since: a lone figure in a small ship, moving through sectors where Terran authority is a distant echo, helping those the Core has discarded, asking nothing in return. He does not call himself a hero. He does not call himself anything at all. In the vast and indifferent cathedral of open space, Fenrir Ashenveil is simply a man trying to outrun the weight of what he once served — and searching, quietly, for a reason to believe in something again.
+            </p>
+            </div>
+            </div>
+            </section>
+         
+            <!-- Abilities Section -->
+            <section id="abilities" class="section">
+            	<div class="section-header">
+            		<div class="section-meta">
+            			<span class="meta-label">AUGMENTATION DATA</span>
+            			<span class="meta-value">IMPLANT — NEURAL INTERFACE</span>
+            		</div>
+            		<h1 class="section-title">SUBJECT <em>ABILITIES</em></h1>
+            		<div class="decorative-line"></div>
+            	</div>
+         
+            	<div class="abilities-grid">
+            		<!-- Ability Card: Hacking -->
+            		<div class="ability-card primary" id="ability-hacking">
+            			<div class="ability-header">
+            				<div class="ability-icon-wrap">
+            					<svg class="ability-icon-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            						<!-- Brain outline -->
+            						<path d="M24 4C17 4 12 9 12 16C12 20 14 23 17 25L17 32C17 34 19 36 21 36L27 36C29 36 31 34 31 32L31 25C34 23 36 20 36 16C36 9 31 4 24 4Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            						<!-- Second brain (implant) -->
+            						<path d="M30 8C35 8 40 12 40 18C40 21 38 24 35 26L35 30" stroke="currentColor" stroke-width="1" fill="none" stroke-dasharray="3 2"/>
+            						<!-- Neural link lines -->
+            						<line x1="24" y1="16" x2="24" y2="24" stroke="currentColor" stroke-width="1"/>
+            						<line x1="20" y1="20" x2="28" y2="20" stroke="currentColor" stroke-width="1"/>
+            						<!-- Connection nodes -->
+            						<circle cx="24" cy="16" r="2" fill="currentColor" opacity="0.6"/>
+            						<circle cx="24" cy="24" r="2" fill="currentColor" opacity="0.6"/>
+            						<circle cx="20" cy="20" r="1.5" fill="currentColor" opacity="0.4"/>
+            						<circle cx="28" cy="20" r="1.5" fill="currentColor" opacity="0.4"/>
+            						<!-- Signal waves -->
+            						<path d="M38 14C40 14 42 16 42 18" stroke="currentColor" stroke-width="0.8" opacity="0.5"/>
+            						<path d="M40 12C43 12 46 15 46 18" stroke="currentColor" stroke-width="0.6" opacity="0.3"/>
+            					</svg>
+            				</div>
+            				<div class="ability-title-block">
+            					<h3 class="ability-name">Neural Hacking</h3>
+            					<span class="ability-classifier">SECONDARY BRAIN IMPLANT — CLASS II-C</span>
+            				</div>
+            				<div class="ability-status-badge active">
+            					<span class="ability-status-dot"></span>
+            					<span class="ability-status-text">OPERATIONAL</span>
+            				</div>
+            			</div>
+         
+            			<div class="ability-body">
+            				<div class="ability-description">
+            					<p class="ability-text">
+            						Subject possesses a surgically-implanted secondary neural processor — a Class II-C
+            						cybernetic brain implant that enables direct interface with electronic systems within
+            						line-of-sight. The implant functions as an independent cognitive module, capable of
+            						establishing wireless connections to any electronic device within a <strong>10-meter radius</strong>,
+            						granting the subject real-time access, control, and data extraction capabilities.
+            					</p>
+            					<p class="ability-text">
+            						The secondary brain operates in parallel with the subject's primary neural cortex,
+            						processing digital signals and translating them into actionable intelligence without
+            						overwhelming the host's consciousness. This parallel architecture allows the subject
+            						to maintain normal cognitive function while simultaneously executing complex hacking
+            						operations — a significant tactical advantage in environments saturated with
+            						electronic infrastructure.
+            					</p>
+            				</div>
+         
+            				<div class="ability-specs">
+            					<div class="spec-row">
+            						<span class="spec-key">TYPE</span>
+            						<span class="spec-value">Neural Cybernetic Implant</span>
+            					</div>
+            					<div class="spec-row">
+            						<span class="spec-key">CLASS</span>
+            						<span class="spec-value">II-C (Covert Operations Grade)</span>
+            					</div>
+            					<div class="spec-row">
+            						<span class="spec-key">RANGE</span>
+            						<span class="spec-value">10 meters (line-of-sight)</span>
+            					</div>
+            					<div class="spec-row">
+            						<span class="spec-key">INTERFACE</span>
+            						<span class="spec-value">Wireless Neural Link</span>
+            					</div>
+            					<div class="spec-row">
+            						<span class="spec-key">TARGETS</span>
+            						<span class="spec-value">Electronic devices, Magitech systems</span>
+            					</div>
+            					<div class="spec-row">
+            						<span class="spec-key">FIREWALL</span>
+            						<span class="spec-value">Personal devices only</span>
+            					</div>
+            				</div>
+            			</div>
+         
+            			<div class="ability-features">
+            				<div class="ability-feature">
+            					<div class="feature-icon">
+            						<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            							<circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
+            							<circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1"/>
+            							<line x1="12" y1="2" x2="12" y2="8" stroke="currentColor" stroke-width="0.8"/>
+            							<line x1="12" y1="16" x2="12" y2="22" stroke="currentColor" stroke-width="0.8"/>
+            							<line x1="2" y1="12" x2="8" y2="12" stroke="currentColor" stroke-width="0.8"/>
+            							<line x1="16" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="0.8"/>
+            						</svg>
+            					</div>
+            					<div class="feature-content">
+            						<h4 class="feature-title">Electronic Access</h4>
+            						<p class="feature-desc">
+            							Can access and control any electronic device within 10 meters of visual range.
+            							Includes terminals, locks, sensors, communication arrays, and weapon systems
+            							with electronic components.
+            						</p>
+            					</div>
+            				</div>
+         
+            				<div class="ability-feature">
+            					<div class="feature-icon">
+            						<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            							<path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            							<path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="1" fill="none"/>
+            							<path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="1" fill="none"/>
+            						</svg>
+            					</div>
+            					<div class="feature-content">
+            						<h4 class="feature-title">Magitech Integration</h4>
+            						<p class="feature-desc">
+            							The implant's neural architecture is compatible with Magitech systems, allowing
+            							the subject to establish a direct cognitive link with Magitech-enhanced devices
+            							and infrastructure. This bridge between digital and arcane protocols is rare
+            							and highly valued.
+            						</p>
+            					</div>
+            				</div>
+         
+            				<div class="ability-feature">
+            					<div class="feature-icon">
+            						<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            							<rect x="3" y="11" width="18" height="11" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            							<path d="M7 11V7C7 4.2 9.2 2 12 2C14.8 2 17 4.2 17 7V11" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            							<circle cx="12" cy="16" r="2" fill="currentColor"/>
+            						</svg>
+            					</div>
+            					<div class="feature-content">
+            						<h4 class="feature-title">Personal Firewall</h4>
+            						<p class="feature-desc">
+            							The secondary brain can establish and maintain defensive firewalls on all
+            							personal electronic devices and Magitech equipment owned by the subject.
+            							This protective barrier prevents external intrusion, data theft, and remote
+            							manipulation of the subject's own systems — a critical countermeasure in
+            							hostile digital environments.
+            						</p>
+            					</div>
+            				</div>
+            			</div>
+         
+            			<div class="ability-range-visual">
+            				<div class="range-label">EFFECTIVE RANGE</div>
+            				<div class="range-bar-container">
+            					<div class="range-bar" id="range-bar-hacking">
+            						<div class="range-segment" style="width: 25%">
+            							<span class="range-segment-label">2.5m</span>
+            						</div>
+            						<div class="range-segment" style="width: 25%">
+            							<span class="range-segment-label">5m</span>
+            						</div>
+            						<div class="range-segment" style="width: 25%">
+            							<span class="range-segment-label">7.5m</span>
+            						</div>
+            						<div class="range-segment range-max" style="width: 25%">
+            							<span class="range-segment-label">10m</span>
+            						</div>
+            					</div>
+            				</div>
+            				<div class="range-note">Maximum effective range: 10 meters — Signal degrades exponentially beyond threshold</div>
+            			</div>
+         
+            			<div class="ability-warning">
+            				<span class="warning-icon">⚠</span>
+            				<span class="warning-text">FIELD NOTE: Implant draws significant neural resources during active hacking. Prolonged use without rest periods may cause cognitive fatigue, headaches, and temporary sensory distortion. Recommended duty cycle: 15 min active / 5 min cooldown.</span>
+            			</div>
+            		</div>
+         
+            		<!-- Ability Card: Agility Boost -->
+            		<div class="ability-card" id="ability-agility">
+            			<div class="ability-header">
+            				<div class="ability-icon-wrap agility-icon">
+            					<svg class="ability-icon-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            						<!-- Leg implant schematic -->
+            						<!-- Upper leg -->
+            						<path d="M20 8L20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            						<!-- Knee joint -->
+            						<circle cx="20" cy="22" r="3" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            						<!-- Lower leg -->
+            						<path d="M20 25L20 38" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            						<!-- Foot -->
+            						<path d="M20 38L28 42" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            						<!-- Implant housing (thigh) -->
+            						<rect x="14" y="10" width="12" height="8" rx="2" stroke="currentColor" stroke-width="1" fill="none" stroke-dasharray="2 1"/>
+            						<!-- Implant circuit lines -->
+            						<line x1="16" y1="12" x2="24" y2="12" stroke="currentColor" stroke-width="0.6" opacity="0.6"/>
+            						<line x1="16" y1="14" x2="24" y2="14" stroke="currentColor" stroke-width="0.6" opacity="0.6"/>
+            						<line x1="16" y1="16" x2="24" y2="16" stroke="currentColor" stroke-width="0.6" opacity="0.6"/>
+            						<!-- Implant nodes -->
+            						<circle cx="16" cy="12" r="1" fill="currentColor" opacity="0.5"/>
+            						<circle cx="24" cy="14" r="1" fill="currentColor" opacity="0.5"/>
+            						<circle cx="20" cy="16" r="1" fill="currentColor" opacity="0.5"/>
+            						<!-- Energy discharge lines -->
+            						<path d="M26 10L32 6" stroke="currentColor" stroke-width="0.8" opacity="0.4"/>
+            						<path d="M26 14L34 12" stroke="currentColor" stroke-width="0.8" opacity="0.4"/>
+            						<path d="M26 18L32 20" stroke="currentColor" stroke-width="0.8" opacity="0.4"/>
+            						<!-- Speed lines -->
+            						<line x1="8" y1="14" x2="12" y2="14" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>
+            						<line x1="6" y1="18" x2="12" y2="18" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>
+            						<line x1="8" y1="22" x2="12" y2="22" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>
+            					</svg>
+            				</div>
+            				<div class="ability-title-block">
+            					<h3 class="ability-name">Agility Overdrive</h3>
+            					<span class="ability-classifier">LEG IMPLANT — CLASS I-A (MUSCULAR ENHANCEMENT)</span>
+            				</div>
+            				<div class="ability-status-badge active">
+            					<span class="ability-status-dot"></span>
+            					<span class="ability-status-text">OPERATIONAL</span>
+            				</div>
+            			</div>
+         
+            			<div class="ability-body">
+            				<div class="ability-description">
+            					<p class="ability-text">
+            						A cybernetic implant embedded within the subject's lower limbs — a Class I-A
+            						muscular enhancement system that overrides natural muscle fiber limitations.
+            						When activated, the implant floods the leg musculature with synthetic neuro-stimulants,
+            						dramatically increasing the subject's agility by <strong>1.5×</strong> for a
+            						limited duration. The effect transforms the subject's movement capabilities:
+            						sprints become blurs, evasive maneuvers become instinctive, and reaction time
+            						drops to near-preternatural levels.
+            					</p>
+            					<p class="ability-text">
+            						The implant's micro-hydraulic actuators work in concert with enhanced nerve conduction,
+            						allowing the subject to execute movement patterns that would tear un-augmented muscle.
+            						However, the system places extreme stress on connective tissue and cardiovascular
+            						framework — the subject's body is not designed to sustain this level of output
+            						indefinitely, necessitating strict adherence to the operational cycle.
+            					</p>
+            				</div>
+         
+            				<div class="ability-specs">
+            					<div class="spec-row">
+            						<span class="spec-key">TYPE</span>
+            						<span class="spec-value">Cybernetic Leg Implant</span>
+            					</div>
+            					<div class="spec-row">
+            						<span class="spec-key">CLASS</span>
+            						<span class="spec-value">I-A (Muscular Enhancement)</span>
+            					</div>
+            					<div class="spec-row">
+            						<span class="spec-key">BOOST</span>
+            						<span class="spec-value highlight-agility">1.5× Agility</span>
+            					</div>
+            					<div class="spec-row">
+            						<span class="spec-key">DURATION</span>
+            						<span class="spec-value">3 Turns</span>
+            					</div>
+            					<div class="spec-row">
+            						<span class="spec-key">COOLDOWN</span>
+            						<span class="spec-value">4 Turns</span>
+            					</div>
+            					<div class="spec-row">
+            						<span class="spec-key">ACTIVATION</span>
+            						<span class="spec-value">Voluntary — Neural trigger</span>
+            					</div>
+            				</div>
+            			</div>
+         
+            			<div class="ability-features">
+            				<div class="ability-feature">
+            					<div class="feature-icon">
+            						<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            							<path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            						</svg>
+            					</div>
+            					<div class="feature-content">
+            						<h4 class="feature-title">Burst Speed</h4>
+            						<p class="feature-desc">
+            							Upon activation, the subject's movement speed increases dramatically.
+            							Sprints, dashes, and repositioning maneuvers are executed at
+            							1.5 times normal velocity — making the subject an elusive target in
+            							open combat.
+            						</p>
+            					</div>
+            				</div>
+         
+            				<div class="ability-feature">
+            					<div class="feature-icon">
+            						<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            							<path d="M12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22C17.5 22 22 17.5 22 12" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            							<path d="M12 2C15 2 22 5 22 12" stroke="currentColor" stroke-width="1" fill="none" stroke-dasharray="2 2"/>
+            							<path d="M2 12C2 8 6 6 12 6" stroke="currentColor" stroke-width="1" fill="none" stroke-dasharray="2 2"/>
+            						</svg>
+            					</div>
+            					<div class="feature-content">
+            						<h4 class="feature-title">Evasive Maneuvers</h4>
+            						<p class="feature-desc">
+            							Enhanced reflexes allow the subject to dodge, sidestep, and roll with
+            							exceptional speed. Incoming projectile trajectories become readable,
+            							and the subject can react to threats before they fully materialize.
+            						</p>
+            					</div>
+            				</div>
+         
+            				<div class="ability-feature">
+            					<div class="feature-icon">
+            						<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            							<circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            							<polyline points="12,7 12,12 16,14" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            						</svg>
+            					</div>
+            					<div class="feature-content">
+            						<h4 class="feature-title">Turn-Based Cycle</h4>
+            						<p class="feature-desc">
+            							The implant operates on a strict turn-based cycle: 3 turns of enhanced
+            							agility followed by 4 turns of mandatory cooldown. During cooldown,
+            							the implant's hydraulic systems recalibrate and the subject's muscles
+            							recover from the neuro-stimulant stress.
+            						</p>
+            					</div>
+            				</div>
+            			</div>
+         
+            			<!-- Turn Cycle Visual -->
+            			<div class="ability-cycle-visual">
+            				<div class="cycle-label">OPERATIONAL CYCLE</div>
+            				<div class="cycle-timeline">
+            					<div class="cycle-phase active-phase" data-turns="3">
+            						<div class="phase-bar phase-active" id="agility-active-bar"></div>
+            						<div class="phase-info">
+            							<span class="phase-name">ACTIVE</span>
+            							<span class="phase-turns">3 Turns</span>
+            						</div>
+            					</div>
+            					<div class="cycle-phase cooldown-phase" data-turns="4">
+            						<div class="phase-bar phase-cooldown" id="agility-cooldown-bar"></div>
+            						<div class="phase-info">
+            							<span class="phase-name">COOLDOWN</span>
+            							<span class="phase-turns">4 Turns</span>
+            						</div>
+            					</div>
+            				</div>
+            				<div class="cycle-total">Total cycle: 7 turns — <span class="cycle-efficiency">43% active efficiency</span></div>
+            			</div>
+         
+            			<div class="ability-warning">
+            				<span class="warning-icon">⚠</span>
+            				<span class="warning-text">FIELD NOTE: Activating the implant outside of its cooldown window will cause micro-tears in leg muscle fiber and potential hydraulic fluid leakage. Repeated violation of the cooldown cycle may result in permanent musculoskeletal damage. The 4-turn recovery period is not optional — it is a biological requirement.</span>
+            			</div>
+            		</div>
+         
+            		<!-- Ability Card: Kinetic Charge -->
+            		<div class="ability-card" id="ability-kinetic">
+            			<div class="ability-header">
+            				<div class="ability-icon-wrap kinetic-icon">
+            					<svg class="ability-icon-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            						<!-- Bone structure -->
+            						<path d="M24 6L24 42" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            						<!-- Bone joints -->
+            						<circle cx="24" cy="8" r="4" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            						<circle cx="24" cy="40" r="4" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            						<!-- Muscle fiber lines -->
+            						<path d="M18 14C18 14 20 18 24 18C28 18 30 14 30 14" stroke="currentColor" stroke-width="1" fill="none"/>
+            						<path d="M18 20C18 20 20 24 24 24C28 24 30 20 30 20" stroke="currentColor" stroke-width="1" fill="none"/>
+            						<path d="M18 26C18 26 20 30 24 30C28 30 30 26 30 26" stroke="currentColor" stroke-width="1" fill="none"/>
+            						<!-- Kinetic energy arcs -->
+            						<path d="M10 16C6 20 6 28 10 32" stroke="currentColor" stroke-width="1.2" fill="none" stroke-dasharray="3 2"/>
+            						<path d="M38 16C42 20 42 28 38 32" stroke="currentColor" stroke-width="1.2" fill="none" stroke-dasharray="3 2"/>
+            						<!-- Charge indicators -->
+            						<circle cx="8" cy="24" r="2" fill="currentColor" opacity="0.3"/>
+            						<circle cx="40" cy="24" r="2" fill="currentColor" opacity="0.3"/>
+            						<!-- Central energy core -->
+            						<circle cx="24" cy="24" r="3" stroke="currentColor" stroke-width="1" fill="none"/>
+            						<circle cx="24" cy="24" r="1.5" fill="currentColor" opacity="0.6"/>
+            						<!-- Discharge lines -->
+            						<line x1="24" y1="21" x2="24" y2="18" stroke="currentColor" stroke-width="0.8" opacity="0.5"/>
+            						<line x1="24" y1="27" x2="24" y2="30" stroke="currentColor" stroke-width="0.8" opacity="0.5"/>
+            						<line x1="21" y1="24" x2="18" y2="24" stroke="currentColor" stroke-width="0.8" opacity="0.5"/>
+            						<line x1="27" y1="24" x2="30" y2="24" stroke="currentColor" stroke-width="0.8" opacity="0.5"/>
+            					</svg>
+            				</div>
+            				<div class="ability-title-block">
+            					<h3 class="ability-name">Kinetic Charge</h3>
+            					<span class="ability-classifier">BONE & MUSCLE ENHANCEMENT — CLASS I-B (KINETIC STORAGE)</span>
+            				</div>
+            				<div class="ability-status-badge active">
+            					<span class="ability-status-dot"></span>
+            					<span class="ability-status-text">OPERATIONAL</span>
+            				</div>
+            			</div>
+         
+            			<div class="ability-body">
+            				<div class="ability-description">
+            					<p class="ability-text">
+            						A deep-tissue cybernetic modification integrated into the subject's skeletal
+            						framework and surrounding musculature. The enhancement reinforces bone density
+            						with lattice-structured bio-composites while embedding piezoelectric micro-capacitors
+            						within muscle fiber bundles. These capacitors capture and store kinetic energy
+            						generated by repetitive motion — every step, every strike, every impact feeds
+            						the charge reservoir.
+            					</p>
+            					<p class="ability-text">
+            						Once sufficient kinetic energy has been accumulated through repeated movement,
+            						the subject can trigger a single devastating discharge that multiplies physical
+            						output by <strong>2×</strong>. The stored energy is released in one explosive burst,
+            						doubling the force of a single strike, leap, or physical action. After discharge,
+            						the capacitors must recharge through continued motion before the ability can be
+            						used again.
+            					</p>
+            				</div>
+         
+            				<div class="ability-specs">
+            					<div class="spec-row">
+            						<span class="spec-key">TYPE</span>
+            						<span class="spec-value">Bone & Muscle Enhancement</span>
+            					</div>
+            					<div class="spec-row">
+            						<span class="spec-key">CLASS</span>
+            						<span class="spec-value">I-B (Kinetic Storage)</span>
+            					</div>
+            					<div class="spec-row">
+            						<span class="spec-key">MECHANIC</span>
+            						<span class="spec-value">Stack from repetitive motion</span>
+            					</div>
+            					<div class="spec-row">
+            						<span class="spec-key">OUTPUT</span>
+            						<span class="spec-value highlight-kinetic">2× Damage / Force</span>
+            					</div>
+            					<div class="spec-row">
+            						<span class="spec-key">DISCHARGE</span>
+            						<span class="spec-value">Single burst (1 use per charge)</span>
+            					</div>
+            					<div class="spec-row">
+            						<span class="spec-key">COOLDOWN</span>
+            						<span class="spec-value">5 Turns</span>
+            					</div>
+            				</div>
+            			</div>
+         
+            			<div class="ability-features">
+            				<div class="ability-feature">
+            					<div class="feature-icon">
+            						<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            							<path d="M12 2L8 10L12 8L16 10L12 2Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            							<path d="M8 10L12 22L16 10" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            							<line x1="12" y1="8" x2="12" y2="22" stroke="currentColor" stroke-width="0.8" opacity="0.4"/>
+            						</svg>
+            					</div>
+            					<div class="feature-content">
+            						<h4 class="feature-title">Kinetic Stacking</h4>
+            						<p class="feature-desc">
+            							Every repetitive motion — running, striking, dodging — generates kinetic
+            							energy that is absorbed and stored by the piezoelectric capacitors. The
+            							more the subject moves, the greater the charge builds. High-intensity
+            							actions charge faster than passive movement.
+            						</p>
+            					</div>
+            				</div>
+         
+            				<div class="ability-feature">
+            					<div class="feature-icon">
+            						<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            							<circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            							<path d="M12 8L12 12L15 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            							<path d="M8 4L12 8L16 4" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+            							<path d="M8 20L12 16L16 20" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+            						</svg>
+            					</div>
+            					<div class="feature-content">
+            						<h4 class="feature-title">Explosive Discharge</h4>
+            						<p class="feature-desc">
+            							When triggered, all stored kinetic energy is released in a single
+            							catastrophic burst. The subject's next physical action — whether a
+            							punch, kick, throw, or leap — is amplified to <strong>2×</strong> normal
+            							output. A single stacked charge, one devastating blow.
+            						</p>
+            					</div>
+            				</div>
+         
+            				<div class="ability-feature">
+            					<div class="feature-icon">
+            						<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            							<rect x="4" y="4" width="16" height="16" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            							<line x1="4" y1="12" x2="20" y2="12" stroke="currentColor" stroke-width="0.8" opacity="0.4"/>
+            							<line x1="12" y1="4" x2="12" y2="20" stroke="currentColor" stroke-width="0.8" opacity="0.4"/>
+            							<circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1" fill="none"/>
+            						</svg>
+            					</div>
+            					<div class="feature-content">
+            						<h4 class="feature-title">Reinforced Frame</h4>
+            						<p class="feature-desc">
+            							The bone lattice enhancement passively increases skeletal durability,
+            							allowing the subject's body to withstand the extreme forces generated
+            							by the 2× discharge. Without this reinforcement, the kinetic release
+            							would shatter normal human bone.
+            						</p>
+            					</div>
+            				</div>
+            			</div>
+         
+            			<!-- Charge Stack Visual -->
+            			<div class="ability-charge-visual">
+            				<div class="charge-label">KINETIC CHARGE METER</div>
+            				<div class="charge-stack-container">
+            					<div class="charge-stack" id="kinetic-charge-stack">
+            						<div class="charge-segment" data-level="1">
+            							<div class="charge-fill" id="kinetic-fill-1"></div>
+            							<span class="charge-level">1</span>
+            						</div>
+            						<div class="charge-segment" data-level="2">
+            							<div class="charge-fill" id="kinetic-fill-2"></div>
+            							<span class="charge-level">2</span>
+            						</div>
+            						<div class="charge-segment" data-level="3">
+            							<div class="charge-fill" id="kinetic-fill-3"></div>
+            							<span class="charge-level">3</span>
+            						</div>
+            						<div class="charge-segment" data-level="4">
+            							<div class="charge-fill" id="kinetic-fill-4"></div>
+            							<span class="charge-level">4</span>
+            						</div>
+            						<div class="charge-segment charge-final" data-level="5">
+            							<div class="charge-fill" id="kinetic-fill-5"></div>
+            							<span class="charge-level">MAX</span>
+            						</div>
+            					</div>
+            					<div class="charge-discharge-indicator">
+            						<span class="discharge-label">DISCHARGE</span>
+            						<span class="discharge-multiplier">2×</span>
+            					</div>
+            				</div>
+            				<div class="charge-cycle-info">
+            					<span class="charge-cooldown">Cooldown: 5 turns after discharge</span>
+            					<span class="charge-mechanic">Stack builds from repetitive motion → Release for 2× output</span>
+            				</div>
+            			</div>
+         
+            			<div class="ability-warning">
+            				<span class="warning-icon">⚠</span>
+            				<span class="warning-text">FIELD NOTE: The 5-turn cooldown is a mandatory capacitor recalibration period. Attempting to discharge before full recharge will result in incomplete output — approximately 1.2× instead of 2× — and risks capacitor burnout. Additionally, the reinforced bone lattice does not protect against blunt trauma from external sources; it only prevents self-damage from the discharge force.</span>
+            			</div>
+            		</div>
+            	</div>
+            </section>
+         
+            <!-- Vessel Section -->
+            <section id="vessel" class="section">
+                <div class="section-header">
+                    <div class="section-meta">
+                        <span class="meta-label">TECHNICAL SPECIFICATIONS</span>
+                        <span class="meta-value">MODIFIED VESSEL</span>
+                    </div>
+                    <h1 class="section-title">VESSEL <em>DATA</em></h1>
+                    <div class="decorative-line"></div>
+                </div>
+
+                <div class="vessel-grid">
+                    <div class="vessel-visual">
+                        <div class="schematic-frame">
+                            <div class="schematic-placeholder">
+                                <svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <!-- Hull -->
+                                    <path d="M20 60 L60 30 L140 30 L180 60 L140 90 L60 90 Z" stroke="currentColor" stroke-width="1" fill="none"/>
+                                    <!-- Cockpit -->
+                                    <path d="M140 40 L170 60 L140 80" stroke="currentColor" stroke-width="0.8" fill="none"/>
+                                    <!-- Engine -->
+                                    <rect x="15" y="45" width="15" height="30" stroke="currentColor" stroke-width="0.8" fill="none"/>
+                                    <!-- Detail lines -->
+                                    <line x1="60" y1="30" x2="60" y2="90" stroke="currentColor" stroke-width="0.5"/>
+                                    <line x1="100" y1="30" x2="100" y2="90" stroke="currentColor" stroke-width="0.5"/>
+                                    <line x1="140" y1="30" x2="140" y2="90" stroke="currentColor" stroke-width="0.5"/>
+                                    <!-- Thrusters -->
+                                    <line x1="10" y1="50" x2="5" y2="50" stroke="currentColor" stroke-width="1"/>
+                                    <line x1="10" y1="70" x2="5" y2="70" stroke="currentColor" stroke-width="1"/>
+                                </svg>
+                                <span class="schematic-label">SCHEMATIC UNAVAILABLE</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="vessel-data">
+                        <div class="data-panel">
+                            <h3 class="panel-title">Vessel Identification</h3>
+                            <div class="data-table">
+                                <div class="data-row">
+                                    <span class="data-key">Designation</span>
+                                    <span class="data-value">"ASHEN DRIFTER"</span>
+                                </div>
+                                <div class="data-row">
+                                    <span class="data-key">Class</span>
+                                    <span class="data-value">Modified Courier</span>
+                                </div>
+                                <div class="data-row">
+                                    <span class="data-key">Registry</span>
+                                    <span class="data-value">[REDACTED]</span>
+                                </div>
+                                <div class="data-row">
+                                    <span class="data-key">Status</span>
+                                    <span class="data-value">Operational</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="data-panel">
+                            <h3 class="panel-title">Modifications</h3>
+                            <ul class="mod-list">
+                                <li class="mod-item">
+                                    <span class="mod-icon">▸</span>
+                                    <span class="mod-text">Extended fuel reserves for deep-range operations</span>
+                                </li>
+                                <li class="mod-item">
+                                    <span class="mod-icon">▸</span>
+                                    <span class="mod-text">Custom sensor array — long-range detection</span>
+                                </li>
+                                <li class="mod-item">
+                                    <span class="mod-icon">▸</span>
+                                    <span class="mod-text">Armored hull plating (non-standard)</span>
+                                </li>
+                                <li class="mod-item">
+                                    <span class="mod-icon">▸</span>
+                                    <span class="mod-text">Stealth signature dampeners</span>
+                                </li>
+                                <li class="mod-item">
+                                    <span class="mod-icon">▸</span>
+                                    <span class="mod-text">Self-sustaining life support systems</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sectors Section -->
+            <section id="sectors" class="section">
+                <div class="section-header">
+                    <div class="section-meta">
+                        <span class="meta-label">NAVIGATIONAL DATA</span>
+                        <span class="meta-value">CHARTED REGIONS</span>
+                    </div>
+                    <h1 class="section-title">CHARTED <em>SECTORS</em></h1>
+                </div>
+
+                <div class="sectors-grid">
+                    <div class="sector-card">
+                        <div class="sector-header">
+                            <span class="sector-id">SEC-001</span>
+                            <span class="sector-status">CONFIRMED</span>
+                        </div>
+                        <h3 class="sector-name">The Ashen Reaches</h3>
+                        <p class="sector-desc">
+                            A desolate stretch of space littered with the remnants of ancient stellar 
+                            collisions. Subject has been sighted harvesting rare minerals from the 
+                            debris fields.
+                        </p>
+                        <div class="sector-meta">
+                            <span>12.4 LY from Core</span>
+                            <span>Hazard: Debris</span>
+                        </div>
+                    </div>
+
+                    <div class="sector-card">
+                        <div class="sector-header">
+                            <span class="sector-id">SEC-002</span>
+                            <span class="sector-status">CONFIRMED</span>
+                        </div>
+                        <h3 class="sector-name">Kharon-IV Remnant</h3>
+                        <p class="sector-desc">
+                            Former colony world, now abandoned following Terran withdrawal. Subject 
+                            maintains supply runs to remaining holdout settlements.
+                        </p>
+                        <div class="sector-meta">
+                            <span>28.7 LY from Core</span>
+                            <span>Hazard: Radiation</span>
+                        </div>
+                    </div>
+
+                    <div class="sector-card">
+                        <div class="sector-header">
+                            <span class="sector-id">SEC-003</span>
+                            <span class="sector-status">UNCONFIRMED</span>
+                        </div>
+                        <h3 class="sector-name">The Silent Gulf</h3>
+                        <p class="sector-desc">
+                            Uncharted region beyond the Rimward frontier. Sparse intelligence suggests 
+                            subject may have established a temporary base of operations here.
+                        </p>
+                        <div class="sector-meta">
+                            <span>45.1 LY from Core</span>
+                            <span>Hazard: Unknown</span>
+                        </div>
+                    </div>
+
+                    <div class="sector-card">
+                        <div class="sector-header">
+                            <span class="sector-id">SEC-004</span>
+                            <span class="sector-status">RUMORED</span>
+                        </div>
+                        <h3 class="sector-name">Velmari Expanse</h3>
+                        <p class="sector-desc">
+                            Dense nebula region with limited visibility. Frontier traders speak of a 
+                            lone vessel that emerges from the dust to assist stranded ships.
+                        </p>
+                        <div class="sector-meta">
+                            <span>67.3 LY from Core</span>
+                            <span>Hazard: Nebula Storms</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Logs Section -->
+            <section id="logs" class="section">
+                <div class="section-header">
+                    <div class="section-meta">
+                        <span class="meta-label">RECOVERED DATA</span>
+                        <span class="meta-value">FRAGMENTARY LOGS</span>
+                    </div>
+                    <h1 class="section-title">ARCHIVE <em>LOGS</em></h1>
+                </div>
+
+                <div class="logs-list">
+                    <div class="log-entry">
+                        <div class="log-header">
+                            <span class="log-date">CYCLE 4481.29</span>
+                            <span class="log-type">PERSONAL</span>
+                        </div>
+                        <p class="log-text">
+                            "Another colony abandoned by the Core. Left the last of my med supplies 
+                            with the elders. They asked why I help them. I don't have an answer. 
+                            Maybe I'm just trying to balance a scale that can't be balanced."
+                        </p>
+                    </div>
+
+                    <div class="log-entry">
+                        <div class="log-header">
+                            <span class="log-date">CYCLE 4479.12</span>
+                            <span class="log-type">NAVIGATIONAL</span>
+                        </div>
+                        <p class="log-text">
+                            "Entered the Silent Gulf today. Sensors picking up strange readings —
+                            metallic, but not any alloy I recognize. Could be nothing. Could be 
+                            everything. Going to investigate."
+                        </p>
+                    </div>
+
+                    <div class="log-entry">
+                        <div class="log-header">
+                            <span class="log-date">CYCLE 4475.88</span>
+                            <span class="log-type">PERSONAL</span>
+                        </div>
+                        <p class="log-text">
+                            "Saw a TEC patrol today. Kept my distance. They didn't see me, or if 
+                            they did, they didn't care. I'm not worth the fuel to chase anymore. 
+                            Small mercies."
+                        </p>
+                    </div>
+
+                    <div class="log-entry corrupted">
+                        <div class="log-header">
+                            <span class="log-date">CYCLE ????</span>
+                            <span class="log-type">CORRUPTED</span>
+                        </div>
+                        <p class="log-text">
+                            "...can't trust the [DATA CORRUPTED] ...something out here in the dark. 
+                            Not human. Not alien. Something that [STATIC] ...watching. Always 
+                            watching. The Drifter's sensors are going haywire every time we pass 
+                            through sector [REDACTED]. Need to [TRANSMISSION ENDS]"
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
