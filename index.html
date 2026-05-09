@@ -985,8 +985,229 @@
             				<span class="warning-text">FIELD NOTE: The 5-turn cooldown is a mandatory capacitor recalibration period. Attempting to discharge before full recharge will result in incomplete output — approximately 1.2× instead of 2× — and risks capacitor burnout. Additionally, the reinforced bone lattice does not protect against blunt trauma from external sources; it only prevents self-damage from the discharge force.</span>
             			</div>
             		</div>
+            	
+            		<!-- Ability Card: Overclock (ULTIMATE) -->
+            		<div class="ability-card ultimate" id="ability-overclock">
+            		<div class="ultimate-banner">ULTIMATE</div>
+            		<div class="ability-header">
+            			<div class="ability-icon-wrap overclock-icon">
+            			<svg class="ability-icon-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            				<!-- Central core — all systems converge -->
+            				<circle cx="24" cy="24" r="6" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            				<circle cx="24" cy="24" r="2.5" fill="currentColor" opacity="0.8"/>
+            				<!-- Radiating energy rings -->
+            				<circle cx="24" cy="24" r="12" stroke="currentColor" stroke-width="0.8" opacity="0.5" stroke-dasharray="4 3"/>
+            				<circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="0.6" opacity="0.3" stroke-dasharray="2 4"/>
+            				<!-- Neural link lines (hacking) -->
+            				<line x1="24" y1="12" x2="24" y2="6" stroke="currentColor" stroke-width="1.2" opacity="0.7"/>
+            				<circle cx="24" cy="5" r="1.5" fill="currentColor" opacity="0.6"/>
+            				<!-- Leg implant lines (agility) -->
+            				<line x1="12" y1="30" x2="6" y2="36" stroke="currentColor" stroke-width="1.2" opacity="0.7"/>
+            				<line x1="36" y1="30" x2="42" y2="36" stroke="currentColor" stroke-width="1.2" opacity="0.7"/>
+            				<circle cx="5" cy="37" r="1.5" fill="currentColor" opacity="0.6"/>
+            				<circle cx="43" cy="37" r="1.5" fill="currentColor" opacity="0.6"/>
+            				<!-- Kinetic charge lines -->
+            				<line x1="12" y1="18" x2="6" y2="12" stroke="currentColor" stroke-width="1.2" opacity="0.7"/>
+            				<line x1="36" y1="18" x2="42" y2="12" stroke="currentColor" stroke-width="1.2" opacity="0.7"/>
+            				<circle cx="5" cy="11" r="1.5" fill="currentColor" opacity="0.6"/>
+            				<circle cx="43" cy="11" r="1.5" fill="currentColor" opacity="0.6"/>
+            				<!-- Overclock energy arcs -->
+            				<path d="M16 8C10 14 10 34 16 40" stroke="currentColor" stroke-width="0.8" opacity="0.4" stroke-dasharray="3 2"/>
+            				<path d="M32 8C38 14 38 34 32 40" stroke="currentColor" stroke-width="0.8" opacity="0.4" stroke-dasharray="3 2"/>
+            				<!-- Warning indicators — system stress -->
+            				<path d="M20 20L24 16L28 20" stroke="currentColor" stroke-width="0.8" opacity="0.5"/>
+            				<path d="M20 28L24 32L28 28" stroke="currentColor" stroke-width="0.8" opacity="0.5"/>
+            			</svg>
+            			</div>
+            			<div class="ability-title-block">
+            			<h3 class="ability-name">Overclock</h3>
+            			<span class="ability-classifier">FULL-SYSTEM OVERRIDE — CLASS Ω (OMEGA PROTOCOL)</span>
+            			</div>
+            			<div class="ability-status-badge ultimate-badge">
+            			<span class="ability-status-dot"></span>
+            			<span class="ability-status-text">LOCKED</span>
+            			</div>
+            		</div>
+            	
+            		<div class="ability-body">
+            			<div class="ability-description">
+            			<p class="ability-text">
+            				The Omega Protocol — a forbidden failsafe embedded deep within the subject's neural implant architecture.
+            				When activated, Overclock forces <strong>all cybernetic systems into simultaneous maximum output</strong>,
+            				removing every safety limiter, thermal regulator, and biological safeguard hardcoded into the implants.
+            				All physical stats — <strong>Power and Agility — are boosted to 1.5×</strong> their baseline values.
+            				Intelligence and Mental remain unaffected, as these fall outside the implant's augmentation domain.
+            				The result is a state of sustained supernatural output that no human body was ever meant to endure.
+            			</p>
+            			<p class="ability-text">
+            				For three turns, the subject becomes something beyond human — a blur of speed and
+            				devastating force that can dismantle entire squads single-handedly. Every strike lands with
+            				the force of a kinetic bomb. Every step covers impossible distance. It is not a tactical ability.
+            				It is a <strong>last resort</strong> — the kind of option a soldier reaches for when the
+            				alternative is certain death.
+            			</p>
+            			<p class="ability-text ability-text-drawback">
+            				Then the crash comes.
+            			</p>
+            			<p class="ability-text">
+            				When Overclock ends, every implant simultaneously shuts down. All augmented stats —
+            				<strong>Power and Agility — are reduced to 0.5×</strong> of their baseline values. Intelligence and
+            				Mental remain untouched. For three turns, the subject is a shadow of their baseline self —
+            				slow, weakened, and physically ravaged. This is not a cooldown. It is a <strong>system crash</strong>.
+            			</p>
+            			</div>
+            	
+            			<div class="ability-specs">
+            			<div class="spec-row">
+            				<span class="spec-key">TYPE</span>
+            				<span class="spec-value">Full-System Override</span>
+            			</div>
+            			<div class="spec-row">
+            				<span class="spec-key">CLASS</span>
+            				<span class="spec-value highlight-ultimate">Ω — Omega Protocol</span>
+            			</div>
+            			<div class="spec-row">
+            				<span class="spec-key">BOOST</span>
+            				<span class="spec-value highlight-ultimate">1.5× Power & Agility</span>
+            			</div>
+            			<div class="spec-row">
+            				<span class="spec-key">DURATION</span>
+            				<span class="spec-value">3 Turns</span>
+            				</div>
+            				<div class="spec-row">
+            				<span class="spec-key">DEBUFF</span>
+            				<span class="spec-value highlight-drawback">3 Turns (0.5× Power & Agility)</span>
+            				</div>
+            				<div class="spec-row">
+            				<span class="spec-key">COOLDOWN</span>
+            				<span class="spec-value">5 Turns</span>
+            			</div>
+            			<div class="spec-row">
+            				<span class="spec-key">ACTIVATION</span>
+            				<span class="spec-value">Emergency — All limiters off</span>
+            			</div>
+            			<div class="spec-row">
+            				<span class="spec-key">USAGE</span>
+            				<span class="spec-value">1× per encounter</span>
+            			</div>
+            			</div>
+            		</div>
+            	
+            		<div class="ability-features">
+            			<div class="ability-feature">
+            			<div class="feature-icon">
+            				<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            				<path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            				<path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="1" fill="none"/>
+            				<path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="1" fill="none"/>
+            				</svg>
+            			</div>
+            			<div class="feature-content">
+            				<h4 class="feature-title">System Override</h4>
+            				<p class="feature-desc">
+            					All cybernetic augmentation systems are forced into simultaneous maximum output.
+            					Safety limiters are stripped. Thermal regulators are disabled. The subject's
+            					<strong>Power and Agility operate at 1.5× baseline</strong> for the full duration
+            					of the override. Intelligence and Mental remain unaffected — the implants have no
+            					domain over pure cognition or willpower.
+            				</p>
+            			</div>
+            			</div>
+            	
+            			<div class="ability-feature">
+            			<div class="feature-icon">
+            				<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            				<path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            				<path d="M7 12L3 14" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+            				<path d="M17 12L21 10" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+            				</svg>
+            			</div>
+            			<div class="feature-content">
+            				<h4 class="feature-title">Maximum Output</h4>
+            				<p class="feature-desc">
+            					During Overclock, the subject moves at 1.5× speed with preternatural reflexes and
+            					delivers devastating 1.5× kinetic strikes without the normal charge-up period.
+            					Every blow hits harder. Every dodge is faster. The combined effect is exponentially
+            					greater than the sum of its parts — a force multiplier that turns one soldier into
+            					an army.
+            				</p>
+            			</div>
+            			</div>
+            	
+            			<div class="ability-feature feature-drawback">
+            			<div class="feature-icon">
+            				<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            				<path d="M12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+            				<line x1="12" y1="8" x2="12" y2="14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            				<circle cx="12" cy="17" r="1" fill="currentColor"/>
+            				</svg>
+            			</div>
+            			<div class="feature-content">
+            				<h4 class="feature-title">System Crash — Drawback</h4>
+            				<p class="feature-desc">
+            					After 3 turns, all implants shut down simultaneously. <strong>Power and Agility are reduced
+            					to 0.5× baseline</strong> — muscles spasming from neuro-stimulant withdrawal, kinetic
+            					capacitors venting as internal thermal burns. Intelligence and Mental remain unaffected.
+            					For 3 turns the subject is critically vulnerable: slow, weakened, and in significant
+            					physical pain. This debuff state is <strong>not optional</strong> — it is the biological
+            					cost of pushing a human body past every limit it was designed to respect.
+            				</p>
+            			</div>
+            			</div>
+            		</div>
+            	
+            		<!-- Overclock Cycle Visual -->
+            		<div class="ability-overclock-visual">
+            			<div class="overclock-label">OVERCLOCK CYCLE</div>
+            			<div class="overclock-timeline">
+            			<div class="overclock-phase overclock-active-phase" data-turns="3">
+            				<div class="overclock-phase-bar overclock-active-bar" id="overclock-active-bar"></div>
+            				<div class="overclock-phase-info">
+            				<span class="overclock-phase-name overclock-active-name">OVERCLOCK</span>
+            				<span class="overclock-phase-turns">3 Turns — 1.5× PWR & AGI</span>
+            				</div>
+            			</div>
+            			<div class="overclock-phase overclock-crash-phase" data-turns="3">
+            				<div class="overclock-phase-bar overclock-crash-bar" id="overclock-crash-bar"></div>
+            				<div class="overclock-phase-info">
+            				<span class="overclock-phase-name overclock-crash-name">SYSTEM CRASH</span>
+            				<span class="overclock-phase-turns">3 Turns — 0.5× PWR & AGI</span>
+            				</div>
+            			</div>
+            			</div>
+            			<div class="overclock-cycle-total">Total cycle: 11 turns (3 active + 3 debuff + 5 cooldown) — <span class="overclock-efficiency">27% active efficiency</span> — <span class="overclock-crash-cost">27% debuff penalty</span></div>
+            		</div>
+            	
+            		<!-- Drawback Detail Panel -->
+            		<div class="ability-drawback-panel">
+            			<div class="drawback-header">
+            			<span class="drawback-icon">⛔</span>
+            			<span class="drawback-title">SYSTEM CRASH — DETAILED BREAKDOWN</span>
+            			</div>
+            			<div class="drawback-grid">
+            			<div class="drawback-item">
+            				<span class="drawback-system">POWER — 0.5×</span>
+            				<span class="drawback-effect">Muscular output halved — Kinetic capacitors venting as internal thermal burns — Strikes severely weakened — Bone lattice under stress</span>
+            			</div>
+            			<div class="drawback-item">
+            				<span class="drawback-system">AGILITY — 0.5×</span>
+            				<span class="drawback-effect">Movement speed halved — Muscle spasms from neuro-stimulant withdrawal — Reflexes dulled — Evasive capability minimal</span>
+            			</div>
+            			<div class="drawback-item">
+            				<span class="drawback-system">INTELLIGENCE — UNAFFECTED</span>
+            				<span class="drawback-effect">Cognitive function remains at baseline — The implants have no domain over pure intellect — Tactical thinking preserved</span>
+            			</div>
+            			<div class="drawback-item">
+            				<span class="drawback-system">MENTAL — UNAFFECTED</span>
+            				<span class="drawback-effect">Willpower and mental resilience remain intact — No neural burnout in primary cortex — Determination unbroken</span>
+            			</div>
+            			</div>
+            		</div>
+            	
+            		</div>
+            	
             	</div>
-            </section>
+            	</section>
          
             <!-- Vessel Section -->
             <section id="vessel" class="section">

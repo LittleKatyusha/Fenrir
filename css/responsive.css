@@ -329,4 +329,69 @@
   .charge-cycle-info {
   	flex-direction: column;
   }
+  
+  /* Overclock Ultimate — Mobile */
+  .ultimate-banner {
+  	font-size: 0.5rem;
+  	letter-spacing: 0.2em;
+  }
+  
+  .ability-overclock-visual {
+  	padding: var(--space-md);
+  }
+  
+  .overclock-phase-bar {
+  	height: 28px;
+  }
+  
+  .overclock-timeline {
+  	flex-direction: column;
+  	gap: var(--space-sm);
+  }
+  
+  .overclock-phase {
+  	flex-direction: row;
+  	align-items: center;
+  	gap: var(--space-sm);
+  }
+  
+  .overclock-active-phase,
+  .overclock-crash-phase {
+  	flex: none;
+  }
+  
+  .overclock-phase-bar {
+  	flex: 1;
+  	height: 20px;
+  }
+  
+  .overclock-phase-info {
+  	flex-direction: column;
+  	gap: 0;
+  	min-width: 80px;
+  }
+  
+  .drawback-grid {
+  	grid-template-columns: 1fr;
+  }
+  
+  .drawback-item {
+  	border-right: none;
+  }
+  
+  .drawback-item:nth-child(even) {
+  	border-right: none;
+  }
+  
+  .drawback-item:nth-last-child(-n+2) {
+  	border-bottom: 1px solid var(--color-rust-dim);
+  }
+  
+  .drawback-item:last-child {
+  	border-bottom: none;
+  }
+  
+  .ability-text-drawback {
+  	font-size: 1rem !important;
+  }
   }

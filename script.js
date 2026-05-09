@@ -358,11 +358,60 @@ function initAbilitiesAnimations() {
           });
         }
       });
-    });
-  }
-}
-
-function animateAbilitiesRange() {
+      });
+      }
+      }
+     
+      // Overclock ultimate ability — icon pulse on click
+      const overclockCard = document.getElementById('ability-overclock');
+      if (overclockCard) {
+      	const overclockIcon = overclockCard.querySelector('.ability-icon-wrap');
+      	overclockCard.addEventListener('click', () => {
+      		if (overclockIcon) {
+      			overclockIcon.classList.add('neural-pulse');
+      			setTimeout(() => {
+      				overclockIcon.classList.remove('neural-pulse');
+      			}, 1000);
+      		}
+      	});
+     
+      // Interactive overclock cycle simulation — click on phases
+      const overclockPhases = overclockCard.querySelectorAll('.overclock-phase');
+      overclockPhases.forEach(phase => {
+      	phase.style.cursor = 'pointer';
+      	phase.addEventListener('click', (e) => {
+      		e.stopPropagation(); // Prevent triggering card click
+      		// Remove active highlight from all phases
+      		overclockPhases.forEach(p => p.classList.remove('overclock-highlight'));
+      		// Add highlight to clicked phase
+      		phase.classList.add('overclock-highlight');
+      		setTimeout(() => {
+      			phase.classList.remove('overclock-highlight');
+      		}, 2000);
+      	});
+      });
+     
+      // Interactive drawback panel — hover flash effect on items
+      const drawbackItems = overclockCard.querySelectorAll('.drawback-item');
+      drawbackItems.forEach(item => {
+      	item.style.cursor = 'default';
+      	item.addEventListener('mouseenter', () => {
+      		const system = item.querySelector('.drawback-system');
+      		if (system) {
+      			system.style.textShadow = '0 0 10px rgba(184, 92, 56, 0.6)';
+      			system.style.transition = 'text-shadow 0.3s ease';
+      		}
+      	});
+      	item.addEventListener('mouseleave', () => {
+      		const system = item.querySelector('.drawback-system');
+      		if (system) {
+      			system.style.textShadow = 'none';
+      		}
+      	});
+      });
+      }
+     
+      function animateAbilitiesRange() {
   const rangeBar = document.getElementById('range-bar-hacking');
   if (rangeBar) {
     // Reset and re-animate
@@ -406,9 +455,29 @@ function animateAbilitiesRange() {
     void chargeFills[0].offsetWidth;
 
     chargeFills.forEach((fill, index) => {
-      setTimeout(() => {
-        fill.classList.add('animated');
-      }, 300 + index * 200);
+    	setTimeout(() => {
+    		fill.classList.add('animated');
+    	}, 300 + index * 200);
     });
+   }
+  
+   // Animate overclock cycle bars
+   const overclockActiveBar = document.getElementById('overclock-active-bar');
+   const overclockCrashBar = document.getElementById('overclock-crash-bar');
+  
+   if (overclockActiveBar) {
+    overclockActiveBar.classList.remove('animated');
+    void overclockActiveBar.offsetWidth;
+    requestAnimationFrame(() => {
+    	overclockActiveBar.classList.add('animated');
+    });
+   }
+  
+   if (overclockCrashBar) {
+    overclockCrashBar.classList.remove('animated');
+    void overclockCrashBar.offsetWidth;
+    requestAnimationFrame(() => {
+    	overclockCrashBar.classList.add('animated');
+    });
+   }
   }
-}

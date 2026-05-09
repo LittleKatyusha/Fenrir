@@ -1289,3 +1289,413 @@ KINETIC CHARGE ABILITY — SPECIFIC STYLES
 	letter-spacing: 0.05em;
 	color: var(--color-rust-dim);
 }
+
+/* ============================================
+OVERCLOCK ULTIMATE ABILITY — SPECIFIC STYLES
+============================================ */
+.ability-card.ultimate {
+	border-color: var(--color-amber);
+	position: relative;
+}
+
+.ability-card.ultimate::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 3px;
+	background: linear-gradient(90deg, var(--color-amber), var(--color-rust), var(--color-amber), var(--color-rust), transparent);
+	transform: scaleX(1);
+	background-size: 200% 100%;
+	animation: ultimate-gradient-scroll 3s linear infinite;
+}
+
+@keyframes ultimate-gradient-scroll {
+	0% { background-position: 0% 0%; }
+	100% { background-position: 200% 0%; }
+}
+
+.ability-card.ultimate::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	border: 1px solid var(--color-amber);
+	opacity: 0;
+	animation: ultimate-border-pulse 4s ease-in-out infinite;
+	pointer-events: none;
+}
+
+@keyframes ultimate-border-pulse {
+	0%, 100% { opacity: 0; }
+	50% { opacity: 0.3; }
+}
+
+/* Ultimate Banner */
+.ultimate-banner {
+	font-family: var(--font-mono);
+	font-size: 0.6rem;
+	letter-spacing: 0.3em;
+	font-weight: 700;
+	color: var(--color-bg-primary);
+	background: linear-gradient(90deg, var(--color-amber), var(--color-rust));
+	padding: var(--space-xs) var(--space-lg);
+	text-align: center;
+	margin: calc(var(--space-xl) * -1);
+	margin-bottom: var(--space-xl);
+	border-bottom: 1px solid var(--color-amber);
+}
+
+/* Overclock Icon */
+.ability-icon-wrap.overclock-icon {
+	color: var(--color-amber);
+	animation: overclock-idle-glow 3s ease-in-out infinite;
+}
+
+@keyframes overclock-idle-glow {
+	0%, 100% { filter: drop-shadow(0 0 2px var(--color-amber-dim)); }
+	50% { filter: drop-shadow(0 0 8px var(--color-amber)); }
+}
+
+.ability-icon-wrap.overclock-icon::after {
+	border-color: var(--color-amber);
+	animation: overclock-ring-pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes overclock-ring-pulse {
+	0%, 100% { opacity: 0; transform: scale(1); }
+	50% { opacity: 0.6; transform: scale(1.15); }
+}
+
+.ability-icon-wrap.overclock-icon.neural-pulse {
+	animation: overclock-flash 1s ease-out;
+}
+
+@keyframes overclock-flash {
+	0% { filter: drop-shadow(0 0 0px var(--color-amber)); }
+	20% { filter: drop-shadow(0 0 20px var(--color-amber)) drop-shadow(0 0 40px var(--color-rust)); }
+	100% { filter: drop-shadow(0 0 2px var(--color-amber-dim)); }
+}
+
+.ability-icon-wrap.overclock-icon.neural-pulse::after {
+	animation: overclock-ring-burst 1s ease-out;
+}
+
+@keyframes overclock-ring-burst {
+	0% { opacity: 1; transform: scale(1); }
+	30% { opacity: 0.8; transform: scale(1.8); }
+	100% { opacity: 0; transform: scale(2.5); }
+}
+
+/* Ultimate Status Badge */
+.ability-status-badge.ultimate-badge {
+	border-color: var(--color-amber);
+	color: var(--color-amber);
+}
+
+.ability-status-badge.ultimate-badge .ability-status-dot {
+	background-color: var(--color-amber);
+	animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Ultimate highlight value */
+.spec-value.highlight-ultimate {
+	color: var(--color-amber) !important;
+	font-weight: 700;
+	font-family: var(--font-mono);
+	letter-spacing: 0.05em;
+	text-shadow: 0 0 8px rgba(201, 169, 89, 0.4);
+}
+
+/* Drawback highlight value */
+.spec-value.highlight-drawback {
+	color: var(--color-rust) !important;
+	font-weight: 700;
+	font-family: var(--font-mono);
+	letter-spacing: 0.05em;
+}
+
+/* Drawback text emphasis */
+.ability-text-drawback {
+	color: var(--color-rust) !important;
+	font-family: var(--font-display);
+	font-size: 1.2rem !important;
+	font-weight: 700;
+	font-style: italic;
+	letter-spacing: 0.05em;
+	text-shadow: 0 0 12px rgba(184, 92, 56, 0.3);
+}
+
+/* Feature Drawback */
+.ability-feature.feature-drawback {
+	border-color: var(--color-rust-dim);
+	background-color: rgba(184, 92, 56, 0.06);
+}
+
+.ability-feature.feature-drawback::before {
+	background-color: var(--color-rust);
+}
+
+.ability-feature.feature-drawback .feature-icon {
+	color: var(--color-rust);
+}
+
+.ability-feature.feature-drawback .feature-title {
+	color: var(--color-rust);
+}
+
+.ability-feature.feature-drawback .feature-desc strong {
+	color: var(--color-rust);
+}
+
+/* ============================================
+OVERCLOCK CYCLE VISUAL
+============================================ */
+.ability-overclock-visual {
+	margin-bottom: var(--space-xl);
+	padding: var(--space-lg);
+	background-color: var(--color-bg-tertiary);
+	border: 1px solid var(--color-amber-dim);
+}
+
+.overclock-label {
+	font-family: var(--font-mono);
+	font-size: 0.65rem;
+	letter-spacing: 0.15em;
+	color: var(--color-amber-dim);
+	margin-bottom: var(--space-md);
+}
+
+.overclock-timeline {
+	display: flex;
+	gap: 2px;
+	margin-bottom: var(--space-md);
+}
+
+.overclock-phase {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-sm);
+}
+
+.overclock-active-phase {
+	flex: 3;
+}
+
+.overclock-crash-phase {
+	flex: 3;
+}
+
+.overclock-phase-bar {
+	height: 36px;
+	position: relative;
+	overflow: hidden;
+}
+
+.overclock-active-bar {
+	background-color: var(--color-bg-primary);
+	border: 1px solid var(--color-amber);
+	width: 0;
+	transition: width 1s ease-out;
+}
+
+.overclock-active-bar.animated {
+	width: 100%;
+}
+
+.overclock-active-bar::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: repeating-linear-gradient(
+		90deg,
+		var(--color-amber) 0px,
+		var(--color-amber) 3px,
+		transparent 3px,
+		transparent 10px
+	);
+	opacity: 0.4;
+	animation: overclock-scroll 1s linear infinite;
+}
+
+@keyframes overclock-scroll {
+	0% { transform: translateX(0); }
+	100% { transform: translateX(10px); }
+}
+
+.overclock-crash-bar {
+	background-color: var(--color-bg-primary);
+	border: 1px solid var(--color-rust-dim);
+	width: 0;
+	transition: width 1.5s ease-out 0.3s;
+}
+
+.overclock-crash-bar.animated {
+	width: 100%;
+}
+
+.overclock-crash-bar::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: repeating-linear-gradient(
+		45deg,
+		var(--color-rust-dim) 0px,
+		var(--color-rust-dim) 1px,
+		transparent 1px,
+		transparent 6px
+	);
+	opacity: 0.3;
+}
+
+.overclock-phase-info {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.overclock-phase-name {
+	font-family: var(--font-mono);
+	font-size: 0.6rem;
+	letter-spacing: 0.1em;
+	font-weight: 700;
+}
+
+.overclock-active-name {
+	color: var(--color-amber);
+}
+
+.overclock-crash-name {
+	color: var(--color-rust);
+}
+
+.overclock-phase-turns {
+	font-family: var(--font-mono);
+	font-size: 0.55rem;
+	letter-spacing: 0.05em;
+	color: var(--color-text-dim);
+}
+
+.overclock-cycle-total {
+	font-family: var(--font-mono);
+	font-size: 0.6rem;
+	letter-spacing: 0.05em;
+	color: var(--color-text-dim);
+}
+
+.overclock-efficiency {
+	color: var(--color-amber-dim);
+}
+
+.overclock-crash-cost {
+	color: var(--color-rust);
+}
+
+/* Overclock phase highlight (interactive) */
+.overclock-phase.overclock-highlight {
+	transform: scale(1.02);
+	transition: transform 0.3s ease;
+}
+
+.overclock-phase.overclock-highlight .overclock-phase-bar {
+	box-shadow: 0 0 14px var(--color-amber);
+}
+
+.overclock-phase.overclock-crash-phase.overclock-highlight .overclock-phase-bar {
+	box-shadow: 0 0 14px var(--color-rust);
+}
+
+.overclock-phase.overclock-highlight .overclock-phase-name {
+	color: var(--color-amber);
+}
+
+/* ============================================
+DRAWBACK DETAIL PANEL
+============================================ */
+.ability-drawback-panel {
+	margin-bottom: var(--space-xl);
+	border: 1px solid var(--color-rust-dim);
+	background-color: rgba(184, 92, 56, 0.05);
+	overflow: hidden;
+}
+
+.drawback-header {
+	display: flex;
+	align-items: center;
+	gap: var(--space-sm);
+	padding: var(--space-md) var(--space-lg);
+	border-bottom: 1px solid var(--color-rust-dim);
+	background-color: rgba(184, 92, 56, 0.08);
+}
+
+.drawback-icon {
+	font-size: 1rem;
+	line-height: 1;
+}
+
+.drawback-title {
+	font-family: var(--font-mono);
+	font-size: 0.65rem;
+	letter-spacing: 0.15em;
+	font-weight: 700;
+	color: var(--color-rust);
+}
+
+.drawback-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 0;
+}
+
+.drawback-item {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-xs);
+	padding: var(--space-md) var(--space-lg);
+	border-bottom: 1px solid var(--color-rust-dim);
+	border-right: 1px solid var(--color-rust-dim);
+}
+
+.drawback-item:nth-child(even) {
+	border-right: none;
+}
+
+.drawback-item:nth-last-child(-n+2) {
+	border-bottom: none;
+}
+
+.drawback-system {
+	font-family: var(--font-mono);
+	font-size: 0.65rem;
+	letter-spacing: 0.1em;
+	font-weight: 700;
+	color: var(--color-rust);
+}
+
+.drawback-effect {
+	font-size: 0.8rem;
+	line-height: 1.6;
+	color: var(--color-text-secondary);
+}
+
+/* Ultimate Warning */
+.ability-warning.ultimate-warning {
+	border-color: var(--color-rust);
+	background-color: rgba(184, 92, 56, 0.12);
+}
+
+.ability-warning.ultimate-warning .warning-icon {
+	color: var(--color-rust);
+	font-size: 1.2rem;
+	animation: warning-pulse 2s ease-in-out infinite;
+}
+
+@keyframes warning-pulse {
+	0%, 100% { opacity: 1; }
+	50% { opacity: 0.5; }
+}
+
+.ability-warning.ultimate-warning .warning-text {
+	color: var(--color-text-secondary);
+	font-style: italic;
+}
